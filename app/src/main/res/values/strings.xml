@@ -13,4 +13,6 @@
     <string name="count_button_text">Count</string>
     <string name="random_text">barnacles</string>
     <string name="textview_random_string">R</string>
+
+    <string name="textview_sign_up_title_string">Sign Up</string>
 </resources>
