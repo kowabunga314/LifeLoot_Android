@@ -1,4 +1,4 @@
-package com.motrio.lifeloot.lifeloot
+package com.kaiju.lifeloot
 
 import org.junit.Test
 
