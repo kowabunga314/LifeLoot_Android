@@ -1,5 +1,6 @@
 package com.kaiju.lifeloot
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,6 +34,10 @@ class Signup : Fragment() {
         view.findViewById<Button>(R.id.button_signup_log_in).setOnClickListener {
             this.handleOnLogIn(view)
         }
+
+        view.findViewById<Button>(R.id.button_signup_guest).setOnClickListener {
+            this.handleOnGuest(view)
+        }
     }
 
     private fun handleOnSignUp(view: View) {
@@ -55,6 +60,17 @@ class Signup : Fragment() {
 
         findNavController().navigate(action)
 
+    }
+
+    private fun handleOnGuest() {
+        this.sendShortToast("Skipping authentication")
+        skipLogin()
+    }
+
+    private fun skipLogin() {
+        var activity = this.activity
+        val intent = Intent(activity, GameActivity::class.java)
+        startActivity(intent)
     }
 
     private fun sendShortToast(message: String) {
