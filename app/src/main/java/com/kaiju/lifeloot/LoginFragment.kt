@@ -1,5 +1,6 @@
 package com.kaiju.lifeloot
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.kaiju.lifeloot.WelcomeActivity
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -32,16 +34,13 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_LoginFragment_to_SignupFragment)
         }
 
-//        val count = args.myArg
-//        val countText = getString(R.string.random_heading, count)
-//        view.findViewById<TextView>(R.id.textview_header).text = countText
-//
-//        val random = java.util.Random()
-//        var randomNumber = 0
-//        if (count > 0) {
-//            randomNumber = random.nextInt(count + 1)
-//        }
-//
-//        view.findViewById<TextView>(R.id.textview_random).text = randomNumber.toString()
+        view.findViewById<Button>(R.id.button_login_log_in).setOnClickListener {
+            // First send login request to server
+
+            // If successful go to game activity
+            var activity = this.activity
+            val intent = Intent(activity, GameActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
