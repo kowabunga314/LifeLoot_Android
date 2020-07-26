@@ -3,29 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/SignUp">
+    app:startDestination="@id/Signup">
 
     <fragment
-        android:id="@+id/SignUp"
-        android:name="com.kaiju.lifeloot.SignUp"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_sign_up">
+        android:id="@+id/Signup"
+        android:name="com.kaiju.lifeloot.Signup"
+        android:label="@string/signup_fragment_label"
+        tools:layout="@layout/fragment_signup">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_SignupFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.kaiju.lifeloot.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_log_in">
+        android:id="@+id/LoginFragment"
+        android:name="com.kaiju.lifeloot.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-        <argument
-            android:name="myArg"
-            app:argType="integer" />
+            android:id="@+id/action_LoginFragment_to_SignupFragment"
+            app:destination="@id/Signup" />
     </fragment>
 </navigation>
