@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +30,8 @@ class GameFragment : Fragment() {
 //            param1 = it.getString(ARG_PARAM1)
 //            param2 = it.getString(ARG_PARAM2)
 //        }
+
+
     }
 
     override fun onCreateView(
@@ -37,23 +42,39 @@ class GameFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_game, container, false)
     }
 
-//    companion object {
-//        /**
-//         * Use this factory method to create a new instance of
-//         * this fragment using the provided parameters.
-//         *
-//         * @param param1 Parameter 1.
-//         * @param param2 Parameter 2.
-//         * @return A new instance of fragment GameFragment.
-//         */
-//        // TODO: Rename and change types and number of parameters
-//        @JvmStatic
-//        fun newInstance(param1: String, param2: String) =
-//            GameFragment().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-//                }
-//            }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<Button>(R.id.button_game_up).setOnClickListener {
+            handleIncrementScore(view)
+        }
+
+        view.findViewById<Button>(R.id.button_game_down).setOnClickListener {
+            handleDecrementScore(view)
+        }
+
+        view.findViewById<FloatingActionButton>(R.id.floating_button_game_reset).setOnClickListener {
+            handleResetScore(view)
+        }
+    }
+
+    private fun handleIncrementScore(view: View) {
+        var scoreField = view.findViewById<TextView>(R.id.textview_game_score)
+        var scoreText = scoreField.text.toString()
+        val newScore = scoreText.toInt() + 1
+        scoreField.text = newScore.toString()
+    }
+
+    private fun handleDecrementScore(view: View) {
+        var scoreField = view.findViewById<TextView>(R.id.textview_game_score)
+        var scoreText = scoreField.text.toString()
+        val newScore = scoreText.toInt() - 1
+        scoreField.text = newScore.toString()
+    }
+
+    private fun handleResetScore(view: View) {
+        var newScore = getString(R.string.default_life_value)
+        view.findViewById<TextView>(R.id.textview_game_score).text = newScore
+    }
+
 }
