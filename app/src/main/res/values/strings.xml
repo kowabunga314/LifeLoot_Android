@@ -25,4 +25,8 @@
     <string name="button_login_sign_up_text">Sign Up</string>
     <string name="textview_login_password_hint">password</string>
     <string name="textview_login_username_hint">username</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
