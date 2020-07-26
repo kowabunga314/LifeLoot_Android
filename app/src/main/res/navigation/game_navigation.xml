@@ -8,11 +8,8 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.kaiju.lifeloot.GameFragment"
-        android:label="@string/title_home"
+        android:label="@string/title_game"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_dashboard"
-            app:destination="@id/navigation_dashboard" />
     </fragment>
 
 </navigation>
