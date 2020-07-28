@@ -28,4 +28,13 @@
 
     <string name="title_activity_game">GameActivity</string>
     <string name="title_game">Game</string>
+
+    <string-array name="player_names">
+        <item>Player 1</item>
+        <item>Player 2</item>
+    </string-array>
+    <string-array name="player_ids">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

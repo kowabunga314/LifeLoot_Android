@@ -36,7 +36,7 @@ class Signup : Fragment() {
         }
 
         view.findViewById<Button>(R.id.button_signup_guest).setOnClickListener {
-            this.handleOnGuest(view)
+            this.handleOnGuest()
         }
     }
 
