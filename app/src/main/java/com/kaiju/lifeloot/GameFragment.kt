@@ -59,15 +59,18 @@ class GameFragment : Fragment() {
         val view: View =  inflater.inflate(R.layout.fragment_game, container, false)
 
         val activity = activity as Context
-//        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
-//        recyclerView.layoutManager = GridLayoutManager(activity, 2)
-//        recyclerView.adapter = DogListAdapter(activity)
 
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        /*
+            Doing this the brute force way for now: just manually set onClick listeners for each
+                player's up and down buttons. In the future this should be dynamically populating
+                player slots based on game type.
+        */
 
         view.findViewById<Button>(R.id.button_game_up1).setOnClickListener {
             handleIncrementScore(view, 1)
@@ -91,36 +94,48 @@ class GameFragment : Fragment() {
     }
 
     private fun handleIncrementScore(view: View, player: Int) {
+        // Get current score TextView
         val scoreField = if (player == 1) {
             view.findViewById<TextView>(R.id.textview_game_score1)
         } else {
             view.findViewById<TextView>(R.id.textview_game_score2)
         }
+        // Get score as integer from TextView
         val scoreText = scoreField.text.toString()
+        // Calculate new score
         val newScore = scoreText.toInt() + 1
+        // Set TextView value to new score
         scoreField.text = newScore.toString()
     }
 
     private fun handleDecrementScore(view: View, player: Int) {
+        // Get current score TextView
         val scoreField = if (player == 1) {
             view.findViewById<TextView>(R.id.textview_game_score1)
         } else {
             view.findViewById<TextView>(R.id.textview_game_score2)
         }
+        // Get current score from TextView
         val scoreText = scoreField.text.toString()
+        // Calculate new score
         val newScore = scoreText.toInt() - 1
 
+        // Check to see if this action will send player life into negative range
         if (newScore < 0) {
+            // STOP RESISTING
             val toast = Toast.makeText(context, "He's dead, Jim", Toast.LENGTH_SHORT)
             toast.show()
         }
 
+        // Set TextView value to new score
         scoreField.text = newScore.toString()
 
     }
 
     private fun handleResetScore(view: View) {
+        // Get the default starting life value
         val newScore = getString(R.string.default_life_value)
+        // Set both scores to starting value
         view.findViewById<TextView>(R.id.textview_game_score1).text = newScore
         view.findViewById<TextView>(R.id.textview_game_score2).text = newScore
     }
