@@ -3,4 +3,7 @@
 
     <string name="button_signup_guest">Continue As Guest</string>
     <string name="textview_game_life">20</string>
+    <string name="textview_player_1_life">20</string>
+    <string name="textview_player_2_life">20</string>
+    <string name="textview_starting_life">20</string>
 </resources>

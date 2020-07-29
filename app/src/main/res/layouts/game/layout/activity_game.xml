@@ -7,16 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:columnWidth="400dp"
-        android:numColumns="1"
-        android:verticalSpacing="24dp"
-        android:horizontalSpacing="10dp"
-        android:stretchMode="spacingWidthUniform"
-        />
+<!--    <GridView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:columnWidth="400dp"-->
+<!--        android:numColumns="1"-->
+<!--        android:verticalSpacing="24dp"-->
+<!--        android:horizontalSpacing="10dp"-->
+<!--        android:stretchMode="spacingWidthUniform"-->
+<!--        />-->
 
 <!--    <fragment-->
 <!--        android:id="@+id/nav_host_fragment"-->
@@ -30,9 +30,9 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:navGraph="@navigation/game_navigation" />-->
 
-<!--    <include-->
-<!--        layout="@layout/content_game"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
+    <include
+        layout="@layout/content_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
