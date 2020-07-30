@@ -69,7 +69,8 @@ class Signup : Fragment() {
 
     private fun skipLogin() {
         var activity = this.activity
-        val intent = Intent(activity, GameActivity::class.java)
+        val intent = Intent(activity, StartupActivity::class.java)
+//        val intent = Intent(activity, GameActivity::class.java)
         startActivity(intent)
     }
 

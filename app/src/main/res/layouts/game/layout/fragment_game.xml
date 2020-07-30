@@ -77,12 +77,11 @@
         android:id="@+id/button_game_reset"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/rounded_button"
         android:layout_marginLeft="100dp"
         android:layout_marginRight="100dp"
         android:layout_weight="1"
+        android:background="@drawable/rounded_button"
         android:text="⥀ RESET ⥁"
-        android:textStyle="bold"
         android:weightSum="13" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

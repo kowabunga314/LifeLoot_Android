@@ -6,4 +6,8 @@
     <string name="textview_player_1_life">20</string>
     <string name="textview_player_2_life">20</string>
     <string name="textview_starting_life">20</string>
+    <string name="title_activity_startup">MainActivity</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_quickstart">Quickstart</string>
+    <string name="title_options">Options</string>
 </resources>
