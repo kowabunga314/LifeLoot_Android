@@ -6,16 +6,16 @@
     app:startDestination="@+id/navigation_quickstart">
 
     <fragment
-        android:id="@+id/navigation_friends"
-        android:name="com.kaiju.lifeloot.ui.home.FriendsFragment"
-        android:label="@string/title_friends"
-        tools:layout="@layout/fragment_friends" />
-
-    <fragment
         android:id="@+id/navigation_quickstart"
         android:name="com.kaiju.lifeloot.ui.dashboard.QuickstartFragment"
         android:label="@string/title_quickstart"
         tools:layout="@layout/fragment_quickstart" />
+
+    <fragment
+        android:id="@+id/navigation_friends"
+        android:name="com.kaiju.lifeloot.ui.home.FriendsFragment"
+        android:label="@string/title_friends"
+        tools:layout="@layout/fragment_friends" />
 
     <fragment
         android:id="@+id/navigation_options"
