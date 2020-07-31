@@ -10,4 +10,5 @@
     <string name="title_friends">Friends</string>
     <string name="title_quickstart">Quickstart</string>
     <string name="title_options">Options</string>
+    <string name="textview_quickstart_title">QUICKSTART</string>
 </resources>
