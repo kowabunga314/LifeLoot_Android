@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_friends"
-        android:icon="@drawable/ic_friends_black_24dp"
-        android:title="@string/title_friends" />
-
-    <item
         android:id="@+id/navigation_quickstart"
         android:icon="@drawable/ic_quickstart_black_24dp"
         android:title="@string/title_quickstart" />
+
+    <item
+        android:id="@+id/navigation_friends"
+        android:icon="@drawable/ic_friends_black_24dp"
+        android:title="@string/title_friends" />
 
     <item
         android:id="@+id/navigation_options"
