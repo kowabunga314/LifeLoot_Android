@@ -7,23 +7,6 @@
     android:background="@color/backgroundPrimary"
     tools:context=".ui.dashboard.QuickstartFragment">
 
-    <TextView
-        android:id="@+id/text_quickstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textColor="@color/textSecondary"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209"
-        tools:text="QUICKSTART" />
-
     <Button
         android:id="@+id/button_quickstart_go"
         android:layout_width="200dp"
@@ -36,6 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.604" />
+
+    <TextView
+        android:id="@+id/textview_quickstart_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUICKSTART"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

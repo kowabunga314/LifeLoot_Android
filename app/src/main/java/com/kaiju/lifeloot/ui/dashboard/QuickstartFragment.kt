@@ -26,6 +26,9 @@ class QuickstartFragment : Fragment() {
 //        quickstartViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
+
+
+
         return root
     }
 }
