@@ -19,13 +19,11 @@ class OptionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        notificationsViewModel =
-//            ViewModelProviders.of(this).get(OptionsViewModel::class.java)
+        notificationsViewModel =
+            ViewModelProviders.of(this).get(OptionsViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_options, container, false)
-//        val textView: TextView = root.findViewById(R.id.text_notifications)
-//        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+
         return root
     }
 }
