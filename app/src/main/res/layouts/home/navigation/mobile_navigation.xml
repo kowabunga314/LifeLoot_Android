@@ -9,18 +9,39 @@
         android:id="@+id/navigation_quickstart"
         android:name="com.kaiju.lifeloot.ui.dashboard.QuickstartFragment"
         android:label="@string/title_quickstart"
-        tools:layout="@layout/fragment_quickstart" />
+        tools:layout="@layout/fragment_quickstart" >
+        <action
+            android:id="@+id/action_navigation_quickstart_to_navigation_friends"
+            app:destination="@id/navigation_friends" />
+        <action
+            android:id="@+id/action_navigation_quickstart_to_navigation_options"
+            app:destination="@id/navigation_options" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_friends"
         android:name="com.kaiju.lifeloot.ui.home.FriendsFragment"
         android:label="@string/title_friends"
-        tools:layout="@layout/fragment_friends" />
+        tools:layout="@layout/fragment_friends" >
+        <action
+            android:id="@+id/action_navigation_friends_to_navigation_quickstart"
+            app:destination="@id/navigation_quickstart" />
+        <action
+            android:id="@+id/action_navigation_friends_to_navigation_options"
+            app:destination="@id/navigation_options" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_options"
         android:name="com.kaiju.lifeloot.ui.notifications.OptionsFragment"
         android:label="@string/title_options"
-        tools:layout="@layout/fragment_options" />
+        tools:layout="@layout/fragment_options" >
+        <action
+            android:id="@+id/action_navigation_options_to_navigation_quickstart"
+            app:destination="@id/navigation_quickstart" />
+        <action
+            android:id="@+id/action_navigation_options_to_navigation_friends"
+            app:destination="@id/navigation_friends" />
+    </fragment>
 
 </navigation>
