@@ -34,6 +34,7 @@ class QuickstartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Start a new "quick game"
         view.findViewById<Button>(R.id.button_quickstart_go).setOnClickListener {
             this.startGame()
         }
