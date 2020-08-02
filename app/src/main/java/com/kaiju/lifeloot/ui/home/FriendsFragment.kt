@@ -19,13 +19,13 @@ class FriendsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(FriendsViewModel::class.java)
+//        homeViewModel =
+//            ViewModelProviders.of(this).get(FriendsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_friends, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = root.findViewById(R.id.text_home)
+//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
     }
 }
