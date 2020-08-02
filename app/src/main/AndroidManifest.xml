@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".StartupActivity"
-            android:label="@string/title_activity_startup"></activity>
+            android:label="@string/title_activity_startup" />
         <activity
             android:name=".GameActivity"
             android:label="@string/title_activity_game" />
