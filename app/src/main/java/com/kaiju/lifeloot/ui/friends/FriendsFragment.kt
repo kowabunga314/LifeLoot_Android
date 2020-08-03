@@ -5,23 +5,50 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
 
 class FriendsFragment : Fragment() {
 
-    private lateinit var homeViewModel: FriendsViewModel
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProviders.of(this).get(FriendsViewModel::class.java)
 
-        val root = inflater.inflate(R.layout.fragment_friends, container, false)
+        val view = inflater.inflate(R.layout.fragment_friends, container, false)
+        val exampleList = generateDummyList(500)
 
-        return root
+        var recyclerViewFriends = view.findViewById<RecyclerView>(R.id.recycler_view_friends)
+
+        recyclerViewFriends.adapter = FriendAdapter(exampleList)
+        recyclerViewFriends.layoutManager = LinearLayoutManager(activity?.applicationContext)
+        recyclerViewFriends.setHasFixedSize(true)
+
+        return view
+    }
+
+    private fun generateDummyList(size: Int): List<FriendView> {
+
+        val list = ArrayList<FriendView>()
+
+        for (i in 0 until size) {
+            val drawable = when (i % 4) {
+                0 -> R.drawable.profile_bot
+                1 -> R.drawable.profile_face
+                2 -> R.drawable.profile_smile
+                else -> R.drawable.profile_tea
+            }
+
+            val item = FriendView(drawable, "Friend $i", "You go back $i years!")
+            list += item
+        }
+
+        return list
     }
 }
