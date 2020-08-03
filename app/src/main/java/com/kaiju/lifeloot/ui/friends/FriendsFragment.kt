@@ -34,6 +34,7 @@ class FriendsFragment : Fragment() {
     }
 
     private fun generateDummyList(size: Int): List<FriendView> {
+        // Just generate a fake list of friends for now
 
         val list = ArrayList<FriendView>()
 
