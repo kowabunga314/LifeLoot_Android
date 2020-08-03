@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_quickstart"
-        android:name="com.kaiju.lifeloot.ui.dashboard.QuickstartFragment"
+        android:name="com.kaiju.lifeloot.ui.quickstart.QuickstartFragment"
         android:label="@string/title_quickstart"
         tools:layout="@layout/fragment_quickstart" >
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_friends"
-        android:name="com.kaiju.lifeloot.ui.home.FriendsFragment"
+        android:name="com.kaiju.lifeloot.ui.friends.FriendsFragment"
         android:label="@string/title_friends"
         tools:layout="@layout/fragment_friends" >
         <action
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/navigation_options"
-        android:name="com.kaiju.lifeloot.ui.notifications.OptionsFragment"
+        android:name="com.kaiju.lifeloot.ui.options.OptionsFragment"
         android:label="@string/title_options"
         tools:layout="@layout/fragment_options" >
         <action

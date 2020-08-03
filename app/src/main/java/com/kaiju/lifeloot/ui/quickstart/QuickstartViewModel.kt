@@ -1,10 +1,6 @@
-package com.kaiju.lifeloot.ui.dashboard
+package com.kaiju.lifeloot.ui.quickstart
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kaiju.lifeloot.R
-import com.kaiju.lifeloot.R.string.textview_quickstart_title
 
 class QuickstartViewModel : ViewModel() {
 

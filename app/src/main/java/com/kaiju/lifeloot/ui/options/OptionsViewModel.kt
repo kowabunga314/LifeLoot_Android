@@ -1,4 +1,4 @@
-package com.kaiju.lifeloot.ui.notifications
+package com.kaiju.lifeloot.ui.options
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

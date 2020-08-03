@@ -1,7 +1,5 @@
-package com.kaiju.lifeloot.ui.home
+package com.kaiju.lifeloot.ui.friends
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class FriendsViewModel : ViewModel() {
