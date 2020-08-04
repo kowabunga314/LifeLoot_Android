@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
@@ -23,6 +24,17 @@ class FriendAdapter(private val friendList: List<FriendView>) : RecyclerView.Ada
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.friend_view,
             parent, false)
+
+        val friendToggle = itemView.findViewById<ImageView>(R.id.imageview_add_friend_toggle)
+        friendToggle.setOnClickListener {
+            friendToggle.setImageResource(R.drawable.ic_friend_activated_24)
+
+//            if (friendToggle.drawable.constantState?.equals(getDrawable(parent.context, R.drawable.ic_friend_deactivated_24)?.constantState)!!) {
+//                friendToggle.setImageResource(R.drawable.ic_friend_activated_24)
+//            } else {
+//                friendToggle.setImageResource(R.drawable.ic_friend_deactivated_24)
+//            }
+        }
 
         return FriendViewHolder(itemView)
     }
