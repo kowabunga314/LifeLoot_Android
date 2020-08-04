@@ -5,18 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.friends.FriendsFragment">
+    tools:context=".ui.friends.FriendsFragment"
+    android:background="@color/backgroundPrimary" >
 
     <EditText
         android:id="@+id/edit_text_search_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/textMain"
         android:text="Name" />
 
     <androidx.recyclerview.widget.RecyclerView
