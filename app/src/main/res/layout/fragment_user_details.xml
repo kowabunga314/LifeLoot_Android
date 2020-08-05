@@ -13,7 +13,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:cardCornerRadius="75dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,18 +29,23 @@
 
     <TextView
         android:id="@+id/user_detail_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="0.5"
+        android:singleLine="false"
         android:text="Boba Fett"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/circular_image_holder_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toEndOf="@+id/circular_image_holder_view"
         app:layout_constraintTop_toTopOf="@+id/circular_image_holder_view" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/user_detail_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -48,18 +53,18 @@
         android:layout_marginRight="16dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:text="TextView"
+        android:text="@string/user_description_default"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circular_image_holder_view" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_challenge_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="48dp"
         android:background="@drawable/rounded_button"
-        android:text="Challenge"
+        android:text="@string/challenge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

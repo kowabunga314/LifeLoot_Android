@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
 import kotlinx.android.synthetic.main.friend_view.view.*
 
-class FriendAdapter(private val friendList: List<FriendView>) : RecyclerView.Adapter<FriendAdapter.FriendViewHolder>() {
+//class ContentItem(val name: String, val imageUrl: String)
+
+class FriendAdapter(private val friendList: List<FriendView>,
+                    private val listener: (FriendView) -> Unit) : RecyclerView.Adapter<FriendAdapter.FriendViewHolder>() {
 
     class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -29,6 +32,7 @@ class FriendAdapter(private val friendList: List<FriendView>) : RecyclerView.Ada
         friendToggle.setOnClickListener {
             friendToggle.setImageResource(R.drawable.ic_friend_activated_24)
 
+            // TODO: fix this toggle thing
 //            if (friendToggle.drawable.constantState?.equals(getDrawable(parent.context, R.drawable.ic_friend_deactivated_24)?.constantState)!!) {
 //                friendToggle.setImageResource(R.drawable.ic_friend_activated_24)
 //            } else {
@@ -48,7 +52,10 @@ class FriendAdapter(private val friendList: List<FriendView>) : RecyclerView.Ada
         holder.nameView.text = currentItem.name
         holder.descriptionView.text = currentItem.description
 
+        holder.itemView.setOnClickListener { listener(currentItem) }
+
     }
 
     override fun getItemCount() = friendList.size
+
 }
