@@ -25,7 +25,7 @@
     <string name="button_login_sign_up_text">Sign Up</string>
     <string name="textview_login_password_hint">password</string>
     <string name="textview_login_username_hint">username</string>
-
+    <string name="challenge">Challenge</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="title_game">Game</string>
 
@@ -37,4 +37,5 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
 </resources>
