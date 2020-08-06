@@ -28,6 +28,13 @@ class FriendAdapter(private val friendList: List<FriendView>,
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.friend_view,
             parent, false)
 
+        // Click profile picture to view profile details
+        val challenge = itemView.findViewById<ImageView>(R.id.imageview_challenge_user)
+        challenge.setOnClickListener {
+            // TODO: call out to create game endpoint and start game activity
+        }
+
+        // Set functionality for friendship toggle
         val friendToggle = itemView.findViewById<ImageView>(R.id.imageview_add_friend_toggle)
         friendToggle.setOnClickListener {
             friendToggle.setImageResource(R.drawable.ic_friend_activated_24)
