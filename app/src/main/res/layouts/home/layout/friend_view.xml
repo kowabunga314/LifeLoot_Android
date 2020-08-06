@@ -53,6 +53,16 @@
             android:src="@drawable/ic_friend_deactivated_24"
             />
 
+        <ImageView
+            android:id="@+id/imageview_challenge_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/imageview_add_friend_toggle"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_challenge_24"
+            />
+
 
     </RelativeLayout>
 
