@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.button_login_log_in).setOnClickListener {
-            // First send login request to server
+            // TODO: Send login request to server
 
             // If successful go to game activity
             var activity = this.activity

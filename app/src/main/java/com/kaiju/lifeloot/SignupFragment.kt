@@ -46,7 +46,7 @@ class Signup : Fragment() {
         val email = view.findViewById<TextView>(R.id.textview_signup_email).text.toString()
         val password = view.findViewById<TextView>(R.id.textview_signup_password).text.toString()
 
-        // Send signup params to backend
+        // TODO: Send signup params to backend
         this.sendShortToast(username)
     }
 
