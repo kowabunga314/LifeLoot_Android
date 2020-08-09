@@ -5,8 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
 import kotlinx.android.synthetic.main.friend_view.view.*
@@ -14,7 +12,8 @@ import kotlinx.android.synthetic.main.friend_view.view.*
 //class ContentItem(val name: String, val imageUrl: String)
 
 class FriendAdapter(private val friendList: List<FriendView>,
-                    private val listener: (FriendView) -> Unit) : RecyclerView.Adapter<FriendAdapter.FriendViewHolder>() {
+                    private val listener: FriendsFragment
+) : RecyclerView.Adapter<FriendAdapter.FriendViewHolder>() {
 
     class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -59,7 +58,7 @@ class FriendAdapter(private val friendList: List<FriendView>,
         holder.nameView.text = currentItem.name
         holder.descriptionView.text = currentItem.description
 
-        holder.itemView.setOnClickListener { listener(currentItem) }
+//        holder.itemView.setOnClickListener { listener(currentItem) }
 
     }
 
