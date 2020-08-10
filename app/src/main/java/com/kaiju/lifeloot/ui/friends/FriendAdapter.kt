@@ -17,9 +17,15 @@ class FriendAdapter(private val friendList: List<FriendView>,
 
     class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val imageView: ImageView = itemView.imageview_friend_card
-        val nameView: TextView = itemView.textview_friend_name
-        val descriptionView: TextView = itemView.textview_friend_description
+        private val imageView: ImageView = itemView.imageview_friend_card
+        private val nameView: TextView = itemView.textview_friend_name
+        private val descriptionView: TextView = itemView.textview_friend_description
+
+        fun bind(friendView: FriendView) {
+            nameView.text = friendView.name
+            descriptionView.text = friendView.description
+            imageView.setImageResource(friendView.imageResource)
+        }
 
     }
 
@@ -52,16 +58,19 @@ class FriendAdapter(private val friendList: List<FriendView>,
     override fun onBindViewHolder(holder: FriendViewHolder, position: Int) {
         val currentItem = friendList[position]
 
+        when (holder) {
 
-        // TODO: move this to FriendViewHolder in accordance with best practices
-        holder.imageView.setImageResource(currentItem.imageResource)
-        holder.nameView.text = currentItem.name
-        holder.descriptionView.text = currentItem.description
-
-//        holder.itemView.setOnClickListener { listener(currentItem) }
-
+            is FriendViewHolder -> {
+                holder.bind(friendList[position])
+            }
+        }
     }
 
     override fun getItemCount() = friendList.size
 
+
+}
+
+class FriendListener(val clickListener: (name: String) -> Unit) {
+    fun onClick(friend: FriendView) = clickListener(friend.name)
 }

@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_navigation_friends_to_navigation_options"
             app:destination="@id/navigation_options" />
+        <action
+            android:id="@+id/action_navigation_friends_to_fragment_user_details"
+            app:destination="@id/fragment_user_details" />
     </fragment>
 
     <fragment
@@ -42,6 +45,14 @@
         <action
             android:id="@+id/action_navigation_options_to_navigation_friends"
             app:destination="@id/navigation_friends" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_user_details"
+        android:name="com.kaiju.lifeloot.ui.friends.DetailsFragment"
+        android:label="UserDetail"
+        tools:layout="@layout/fragment_user_details">
+
     </fragment>
 
 </navigation>
