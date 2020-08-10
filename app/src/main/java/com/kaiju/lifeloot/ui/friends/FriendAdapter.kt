@@ -5,6 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
 import kotlinx.android.synthetic.main.friend_view.view.*
@@ -21,17 +25,29 @@ class FriendAdapter(private val friendList: List<FriendView>,
         private val nameView: TextView = itemView.textview_friend_name
         private val descriptionView: TextView = itemView.textview_friend_description
 
+        var itemClick: ((String) -> Unit)? = null
+
         fun bind(friendView: FriendView) {
+            val name = friendView.name
             nameView.text = friendView.name
             descriptionView.text = friendView.description
             imageView.setImageResource(friendView.imageResource)
+            itemView.setOnClickListener {
+                itemClick?.invoke(friendView.name)
+                Toast.makeText(itemView.context, "Thanks for clicking $name!", Toast.LENGTH_SHORT).show()
+            }
         }
-
     }
+
+    var itemClick: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.friend_view,
             parent, false)
+
+        itemClick = { name ->
+            this@FriendAdapter.itemClick?.invoke(name)
+        }
 
         // Click profile picture to view profile details
         val challenge = itemView.findViewById<ImageView>(R.id.imageview_challenge_user)
@@ -67,10 +83,4 @@ class FriendAdapter(private val friendList: List<FriendView>,
     }
 
     override fun getItemCount() = friendList.size
-
-
-}
-
-class FriendListener(val clickListener: (name: String) -> Unit) {
-    fun onClick(friend: FriendView) = clickListener(friend.name)
 }
