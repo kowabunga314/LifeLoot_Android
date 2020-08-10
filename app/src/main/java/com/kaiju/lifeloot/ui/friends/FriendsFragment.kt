@@ -1,6 +1,7 @@
 package com.kaiju.lifeloot.ui.friends
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,8 +34,6 @@ class FriendsFragment : Fragment() {
         return view
     }
 
-
-
     private fun generateDummyList(size: Int): List<FriendView> {
         // Just generate a fake list of friends for now
 
@@ -53,5 +52,16 @@ class FriendsFragment : Fragment() {
         }
 
         return list
+    }
+
+    operator fun invoke(currentItem: FriendView) {
+        TODO("Not yet implemented")
+        val fragment = DetailsFragment.newInstance(currentItem.name, "wumbo")
+        val transaction = fragmentManager?.beginTransaction()
+        if (transaction != null) {
+            transaction.replace(R.id.content, fragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
     }
 }
