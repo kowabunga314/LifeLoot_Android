@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.kaiju.lifeloot.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_USERNAME = "username"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_DESCRIPTION = "description"
+private const val ARG_IMAGE = "image"
 
 /**
  * A simple [Fragment] subclass.
@@ -22,13 +25,15 @@ private const val ARG_PARAM2 = "param2"
 class DetailsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var username: String? = null
-    private var param2: String? = null
+    private var description: String? = null
+    private var image: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             username = it.getString(ARG_USERNAME)
-            param2 = it.getString(ARG_PARAM2)
+            description = it.getString(ARG_DESCRIPTION)
+            image = it.getInt(ARG_IMAGE)
         }
     }
 
@@ -38,6 +43,19 @@ class DetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_details, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val nameField = view.findViewById<TextView>(R.id.user_detail_title)
+        nameField.text = this.username
+
+        val descriptionField = view.findViewById<TextView>(R.id.user_detail_description)
+        descriptionField.text = this.description
+
+        val imageField = view.findViewById<ImageView>(R.id.user_detail_image)
+        this.image?.let { imageField.setImageResource(it) }
     }
 
     companion object {
@@ -51,11 +69,12 @@ class DetailsFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(username: String, param2: String) =
+        fun newInstance(username: String, description: String, image: Int) =
             DetailsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_USERNAME, username)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_DESCRIPTION, description)
+                    putInt(ARG_IMAGE, image)
                 }
             }
     }
