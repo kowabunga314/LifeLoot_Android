@@ -1,6 +1,5 @@
 package com.kaiju.lifeloot.ui.friends
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
@@ -36,12 +33,12 @@ class FriendAdapter(private val friendList: List<FriendView>,
             itemView.setOnClickListener {
                 itemClick?.invoke(friendView.name)
                 Toast.makeText(itemView.context, "Thanks for clicking $name!", Toast.LENGTH_SHORT).show()
-                openUserDetails(friendView.name)
+                openUserDetails(friendView.name, friendView.description, friendView.imageResource)
             }
         }
 
-        private fun openUserDetails(username: String) {
-            val action = FriendsFragmentDirections.actionNavigationFriendsToFragmentUserDetails(username)
+        private fun openUserDetails(username: String, description: String, image: Int) {
+            val action = FriendsFragmentDirections.actionNavigationFriendsToFragmentUserDetails(username, description, image)
             itemView.findNavController().navigate(action)
         }
     }

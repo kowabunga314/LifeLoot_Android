@@ -55,14 +55,14 @@ class FriendsFragment : Fragment() {
         return list
     }
 
-    operator fun invoke(currentItem: FriendView) {
-        TODO("Not yet implemented")
-        val fragment = DetailsFragment.newInstance(currentItem.name, "wumbo")
-        val transaction = fragmentManager?.beginTransaction()
-        if (transaction != null) {
-            transaction.replace(R.id.content, fragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-    }
+//    operator fun invoke(currentItem: FriendView) {
+//        TODO("Not yet implemented")
+//        val fragment = DetailsFragment.newInstance(currentItem.name, "wumbo")
+//        val transaction = fragmentManager?.beginTransaction()
+//        if (transaction != null) {
+//            transaction.replace(R.id.content, fragment)
+//            transaction.addToBackStack(null)
+//            transaction.commit()
+//        }
+//    }
 }
