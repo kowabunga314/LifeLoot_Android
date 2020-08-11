@@ -6,7 +6,6 @@
     android:id="@+id/user_detail_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/navbar_height"
     tools:context=".ui.friends.DetailsFragment">
 
     <androidx.cardview.widget.CardView
