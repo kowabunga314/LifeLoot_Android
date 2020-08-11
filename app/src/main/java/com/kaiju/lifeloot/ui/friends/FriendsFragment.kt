@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,7 +28,7 @@ class FriendsFragment : Fragment() {
 
         var recyclerViewFriends = view.findViewById<RecyclerView>(R.id.recycler_view_friends)
 
-        recyclerViewFriends.adapter = FriendAdapter(exampleList, this)
+        recyclerViewFriends.adapter = FriendAdapter(exampleList, this.activity as AppCompatActivity)
         recyclerViewFriends.layoutManager = LinearLayoutManager(activity?.applicationContext)
         recyclerViewFriends.setHasFixedSize(true)
 

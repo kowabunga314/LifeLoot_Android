@@ -1,5 +1,6 @@
 package com.kaiju.lifeloot.ui.friends
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,17 +10,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kaiju.lifeloot.R
 import kotlinx.android.synthetic.main.friend_view.view.*
 
-//class ContentItem(val name: String, val imageUrl: String)
 
 class FriendAdapter(private val friendList: List<FriendView>,
-                    private val listener: FriendsFragment
+                    private val activity: AppCompatActivity
 ) : RecyclerView.Adapter<FriendAdapter.FriendViewHolder>() {
 
-    class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class FriendViewHolder(itemView: View, private var activity: AppCompatActivity) : RecyclerView.ViewHolder(itemView) {
 
         private val imageView: ImageView = itemView.imageview_friend_card
         private val nameView: TextView = itemView.textview_friend_name
@@ -35,7 +36,13 @@ class FriendAdapter(private val friendList: List<FriendView>,
             itemView.setOnClickListener {
                 itemClick?.invoke(friendView.name)
                 Toast.makeText(itemView.context, "Thanks for clicking $name!", Toast.LENGTH_SHORT).show()
+                openUserDetails(friendView.name)
             }
+        }
+
+        private fun openUserDetails(username: String) {
+            val action = FriendsFragmentDirections.actionNavigationFriendsToFragmentUserDetails(username)
+            itemView.findNavController().navigate(action)
         }
     }
 
@@ -68,7 +75,7 @@ class FriendAdapter(private val friendList: List<FriendView>,
 //            }
         }
 
-        return FriendViewHolder(itemView)
+        return FriendViewHolder(itemView, activity)
     }
 
     override fun onBindViewHolder(holder: FriendViewHolder, position: Int) {

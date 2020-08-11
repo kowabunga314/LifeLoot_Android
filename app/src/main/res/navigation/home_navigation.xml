@@ -31,7 +31,11 @@
             app:destination="@id/navigation_options" />
         <action
             android:id="@+id/action_navigation_friends_to_fragment_user_details"
-            app:destination="@id/fragment_user_details" />
+            app:destination="@id/fragment_user_details" >
+            <argument
+                android:name="username"
+                app:argType="string" />
+        </action>
     </fragment>
 
     <fragment
